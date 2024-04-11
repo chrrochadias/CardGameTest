@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tirage de carte{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Votre tirage trié par famille : </h1>
+        {% include 'Game/_partial/cards.html.twig' %}
+
+        <h1>Définissez votre ordre de valeur : </h1>
+        {{ form(form) }}
+
+    </div>
+</div>
+{% endblock %}

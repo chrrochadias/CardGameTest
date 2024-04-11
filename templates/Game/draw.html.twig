@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="vertical-center">
+        <h1>Votre tirage : </h1>
+        {% include 'Game/_partial/cards.html.twig' %}
+
+        <a href="{{ path('order_cards_family', {'id': hand.id }) }}" class="btn btn-primary">Commençons le tri !</a>
+    </div>
+</div>
+{% endblock %}

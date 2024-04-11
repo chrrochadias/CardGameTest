@@ -1,3 +1,9 @@
+
 body {
-    background-color: skyblue;
+    background-color: white;
+}
+
+
+.vertical-center {
+   text-align: center;
 }

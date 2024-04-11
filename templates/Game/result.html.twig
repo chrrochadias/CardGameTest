@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="vertical-center">
+        <h1>Votre tirage de base : </h1>
+        {% include 'Game/_partial/cards.html.twig' %}
+        <h1>Les cartes trié avec votre ordre de famille :</h1>
+        <span>Votre Ordre défini :</span>
+        {% for card in orderFamily %}
+            <li class="d-inline-block">
+                {{ card.cardFamily }}
+            </li>
+        {% endfor %}
+        {% for card in arrangedHand %}
+            <div class="card">
+                {{ card.cardFamily }} {{ card.cardValue }}
+            </div>
+        {% endfor %}
+
+        <h1>Les cartes trié avec votre ordre de valeur + Famille:</h1>
+         <span>Votre Ordre défini :</span>
+        {% for card in orderValue %}
+            <li class="d-inline-block">
+                {{ card.cardValue }}
+            </li>
+        {% endfor %}
+        {% for cardFamily in arrangedHandValues %}
+            {% for card in cardFamily %}
+                <div class="card">
+                    {{ card.cardFamily }} {{ card.cardValue }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
